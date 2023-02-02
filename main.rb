@@ -2,7 +2,8 @@
 require 'sinatra'
 require 'mongoid'
 require './models/post'  
-require './models/comment'  
+require './models/comment'
+
 # DB Setup
 Mongoid.load!(File.join(File.dirname(__FILE__), 'config', 'mongoid.yml'))
 def getBody (req)
@@ -10,8 +11,12 @@ def getBody (req)
   return JSON.parse(req.body.read)
 end
 
+before do
+  content_type :json
+end
+
 get '/posts' do
-  Post.all.to_json
+  return Post.all.to_json
 end
 
 post '/posts' do
