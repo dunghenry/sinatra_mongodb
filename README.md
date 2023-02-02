@@ -2,21 +2,6 @@
 
 ## Setup project
 
-### Create Gemfile
-
-```js
-source 'https://rubygems.org'
-gem 'sinatra', '~> 2.0'
-gem 'mongoid', '~> 7.0'
-```
-
-### Install dependencies
-
-```js
-gem install bundler
-bundle install
-```
-
 ### Config MongoDB local
 
 ```js
